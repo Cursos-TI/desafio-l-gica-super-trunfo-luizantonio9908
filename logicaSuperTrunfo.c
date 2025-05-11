@@ -11,6 +11,7 @@
     int ponto_turistico, ponto_turistico2;
     float densidade1, per_capita1, densidade2, per_capita2;
     float super_poder1, super_poder2;
+    int opcao; 
 
     // criando variaveis para os resultados das comparações 
     int result_popu, result_pturistico;
@@ -118,7 +119,7 @@
     printf("O valor da carta do super poder dois é: %f \n" ,super_poder2);
 
     // Atribuindo todos os operações de maior e menos em suas respectivas variáveis        
-    result_popu = populacao2>populacao2;
+    result_popu = populacao>populacao2;
     result_area = area>area2;
     result_pib = pib>pib2;
     result_pturistico = ponto_turistico>ponto_turistico2;
@@ -126,10 +127,8 @@
     result_percapta = per_capita1>per_capita2;
     result_super = super_poder1>super_poder2;
 
-
     printf("------------------------------------------------------------\n");
     // mostrando o reultado final do jogo
-
     printf(" A Carta 1 venceu na população: %d \n" , result_popu);
     printf(" A Carta 2 venceu na área total: %f \n",result_area);
     printf(" A Carta 1 venceu no PIB: %f: \n" , result_pib);
@@ -146,6 +145,78 @@
         printf("A carta 2 ganhou no queisto ponto turistico, com: %d pontos turisticos\n" ,ponto_turistico2);
     }
 
+    
+    // iniciando menu para comparações 
+    printf("### MENU DO SUPER TRUNFO ### \n");
+    printf("1. NOME DO PAIS -- \n");
+    printf("2. POPULAÇÂO -- \n");
+    printf("3. ÁREA --\n");
+    printf("4. PIB -- \n");
+    printf("5. NÚMRO DE PONTOS TURISTICOS -- \n");
+    printf("6. DENSIDADE DEMÓGRAFICA -- \n");
+    printf("QUAL ITEM DESEJA COMPARAR? \n"); 
+    scanf("%d" , &opcao); 
+
+    // inserindo o switch
+    switch (opcao){
+        case 1:
+            printf("O Estado na carta UM selecionado foi: %s e o Municipio foi o: %s \n" ,estado1, nome_cidade);
+            printf("O Estado na carta DOIS selecionado foi: %s e o Municipio foi o: %s \n" ,estado2, nome_cidade2);
+            break;
+
+        case 2:
+            if (populacao > populacao2){
+                printf("A população da CARTA 1 ganhou, com %d  \n" ,populacao);
+            }else if (populacao < populacao2){
+                printf("A população da CARTA 2 ganhou, com %d  \n" ,populacao2);
+            }else {
+                printf("EMPATE NESSE QUESITO!!!");
+            }
+            break;
+
+        case 3:
+            if (area > area2){
+                printf("A área da CARTA 1 ganhou, com %f  \n" ,area);
+            }else if (area < area2){
+                printf("A área da CARTA 2 ganhou, com %f  \n" ,area2);
+            }else{
+                printf("EMPATE NESSE QUESITO!!!");
+            }
+            break;
+
+        case 4: 
+            if (pib > pib2){
+                printf("O PIB da CARTA 1 ganhou, com %2.f \n" ,pib);
+            }else if (pib < pib2){
+                printf("O PIB da CARTA 2 ganhou, com %2.f \n" ,pib2);
+            }else {
+                printf("EMPATE NESSE QUESITO!!!");
+            }
+            break;
+
+        case 5:
+            if (ponto_turistico > ponto_turistico2){
+                printf("A quantidade de pontos turisticos da CARTA 1 ganhou, com %d \n" ,ponto_turistico);
+            }else if (ponto_turistico < ponto_turistico2){
+                printf("A quantidade de pontos turisticos da CARTA 2 ganhou, com %d \n" ,populacao2);
+            }else {
+                printf("EMPATE NESSE QUESITO!!!");
+            }
+            break;
+
+        case 6: 
+            if (densidade1 < densidade2){
+                printf("A Densidade da CARTA 1 ganhou, com %.2f  \n" ,densidade1);
+            }else if (densidade1> densidade2){
+                printf("A densidade da CARTA 2 ganhou, com %.2f  \n" ,populacao2);
+            }else {
+                printf("EMPATE NESSE QUESITO!!!");
+            }
+            break;
+        default:
+            printf("OPÇÃO INVÁLIDA, INFORME UMA CORRETA \n");
+        
+    }
 
     return 0;
 }
