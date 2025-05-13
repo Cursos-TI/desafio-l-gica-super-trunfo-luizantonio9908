@@ -12,6 +12,8 @@
     float densidade1, per_capita1, densidade2, per_capita2;
     float super_poder1, super_poder2;
     int opcao; 
+    int atributo1 , atributo2;
+    int carta1, carta2; 
 
     // criando variaveis para os resultados das comparações 
     int result_popu, result_pturistico;
@@ -218,5 +220,116 @@
         
     }
 
-    return 0;
+    printf("1. POPULAÇÂO -- \n");
+    printf("2. ÁREA --\n");
+    printf("3. PIB -- \n");
+    printf("4. NÚMRO DE PONTOS TURISTICOS -- \n");
+    printf("5. DENSIDADE DEMÓGRAFICA -- \n");
+    printf("6. SUPER PODER --\n ");
+    printf("QUAL ATRIBUTO DESEJA COMPARAR? \n");
+    scanf("%d" ,&atributo1);
+
+    printf("1. POPULAÇÂO -- \n");
+    printf("2. ÁREA --\n");
+    printf("3. PIB -- \n");
+    printf("4. NÚMRO DE PONTOS TURISTICOS -- \n");
+    printf("5. DENSIDADE DEMÓGRAFICA -- \n");
+    printf("6. SUPER PODER --\n ");
+    printf("QUAL ATRIBUTO DESEJA COMPARAR? \n");
+    scanf("%d" ,&atributo2);
+
+    int valor1carta1, valor1carta2, valor2carta2, valor2carta1; 
+
+    if (atributo1 == atributo2){
+        printf("Opçao deu empate \n");
+    }else{
+        switch (atributo1){
+            case 1:
+                valor1carta1 = populacao;
+                valor1carta2 = populacao2;
+                break;
+            case 2:
+                valor1carta1 = area; 
+                valor1carta2 = area2;            
+                break;
+            case 3:
+                valor1carta1 = pib;
+                valor1carta2 = pib2;
+                break;
+            case 4:
+                valor1carta1 = ponto_turistico;
+                valor1carta2 = ponto_turistico2;
+                break;
+            case 5:
+                valor1carta1 = densidade1;
+                valor1carta2 = densidade2;
+                break;
+            case 6:
+                valor1carta1 = super_poder1;
+                valor1carta2 = super_poder2;
+                break;
+        }
+
+        switch (atributo2){
+            case 1:
+                valor1carta2 = populacao;
+                valor2carta2 = populacao2;
+                break;
+            case 2:
+                valor1carta2 = area; 
+                valor2carta2 = area2;            
+                break;
+            case 3:
+                valor1carta2 = pib;
+                valor2carta2 = pib2;
+                break;
+            case 4:
+                valor1carta2 = ponto_turistico;
+                valor2carta2 = ponto_turistico2;
+                break;
+            case 5:
+                valor1carta2 = densidade1;
+                valor2carta2 = densidade2;
+                break;
+            case 6:
+                valor1carta2 = super_poder1;
+                valor2carta2 = super_poder2;
+                break;
+        }
+     }
+
+        printf("Comparando atributos no jogo \n");
+        printf("Primeiro atributo ");
+
+        (atributo1 == 1) ? "População" : (atributo1 == 2) ? "Área" : (atributo1 == 3) ? "PIB" : (atributo1 == 4) ? "Pontos Turísticos" : 
+        (atributo1 == 5) ? "Densidade Demográfica" : ("Super-Poder");
+
+        printf("Valor 1 da Primeira Carta: %.2f, Valor 1 da Segunda Carta: %.2f\n", carta1, carta2);
+
+        printf("Segundo Atributo: %s\n", 
+        (atributo2 == 1) ? "População" : (atributo2 == 2) ? "Área" : (atributo2 == 3) ? "PIB" : (atributo2 == 4) ? "Pontos Turísticos" : 
+        (atributo2 == 5) ? "Densidade Demográfica" : "Super-Poder");
+        printf("Valor 2 da Primeira Carta: %.2f, Valor 2 da Segunda Carta: %.2f\n", carta1, carta2);
+
+        int somacarta1, somacarta2;
+
+        somacarta1 = valor1carta1 + valor2carta1;
+        somacarta2 = valor1carta2 + valor2carta2;
+
+        printf("\n Soma da Primeira Carta: %d, Soma da Segunda Carta: %d", somacarta1, somacarta2);
+
+        if (somacarta1 > somacarta2) {
+            printf("Resultado Final: --- PARABÉNS! A Primeira Carta venceu!\n");
+        } else if (somacarta1 < somacarta2) {
+            printf("Resultado Final: --- PARABÉNS! A Segunda Carta venceu!\n");
+        } else {
+            printf("Resultado Final: As duas cartas empataram!\n");
+
+   }
+
 }
+
+
+
+        
+   
